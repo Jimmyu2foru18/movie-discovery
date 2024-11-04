@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Movie Discovery</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <i class="fas fa-film"></i>
+            <h1>Movie Discovery</h1>
+        </div>
+        <div class="nav-links">
+            <button id="show-favorites" class="nav-btn">
+                <i class="fas fa-heart"></i> Favorites
+            </button>
+            <button id="show-watchlist" class="nav-btn">
+                <i class="fas fa-bookmark"></i> Watchlist
+            </button>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="search-container">
+            <form id="form">
+                <div class="search-box">
+                    <i class="fas fa-search search-icon"></i>
+                    <input 
+                        type="text" 
+                        id="search" 
+                        class="search" 
+                        placeholder="Search for movies..." 
+                        aria-label="Search Movies"
+                    >
+                </div>
+            </form>
+            <div class="filter-container">
+                <select id="genre-filter" class="filter-select">
+                    <option value="">All Genres</option>
+                </select>
+                <select id="year-filter" class="filter-select">
+                    <option value="">All Years</option>
+                </select>
+                <select id="sort-by" class="filter-select">
+                    <option value="popularity.desc">Most Popular</option>
+                    <option value="vote_average.desc">Highest Rated</option>
+                    <option value="release_date.desc">Newest</option>
+                    <option value="revenue.desc">Highest Grossing</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+        <div class="loader" id="loader">
+            <div class="spinner"></div>
+        </div>
+    </main>
+
+    <div class="pagination">
+        <button id="prev" class="pagination-btn">
+            <i class="fas fa-chevron-left"></i> Previous
+        </button>
+        <span id="current-page">Page 1</span>
+        <button id="next" class="pagination-btn">
+            Next <i class="fas fa-chevron-right"></i>
+        </button>
+    </div>
+
+    <!-- Movie Modal -->
+    <div id="movie-modal" class="modal">
+        <div class="modal-content">
+            <button class="close-btn">
+                <i class="fas fa-times"></i>
+            </button>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <footer class="footer">
+        <p>© 2024 CineVerse.</p>
+        <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
