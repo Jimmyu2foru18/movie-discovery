@@ -40,7 +40,7 @@ A modern, responsive web application for discovering and exploring movies. Built
 1. Clone the repository:
 ```bash
 git clone https://github.com/Jimmyu2foru18/movie-discovery.git
-
+```
 
 2. Navigate to the project directory:
 ```
