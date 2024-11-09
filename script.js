@@ -18,12 +18,12 @@ let currentSearch = ''
 let favorites = JSON.parse(localStorage.getItem('favorites')) || []
 let watchlist = JSON.parse(localStorage.getItem('watchlist')) || []
 
-// Add this after your other constants
+// Add after constants
 const genreFilter = document.getElementById('genre-filter')
 const yearFilter = document.getElementById('year-filter')
 const sortBy = document.getElementById('sort-by')
 
-// Add these checks after your constants
+// Checks after constants
 console.log('Genre Filter Element:', genreFilter);
 console.log('Year Filter Element:', yearFilter);
 console.log('Sort By Element:', sortBy);
@@ -32,7 +32,7 @@ if (!genreFilter || !yearFilter || !sortBy) {
     console.error('One or more filter elements not found!');
 }
 
-// Add this function to initialize genres
+// Initialize genres
 async function initializeGenres() {
     try {
         console.log('Initializing genres...');
@@ -61,7 +61,7 @@ async function initializeGenres() {
     }
 }
 
-// Add this function to initialize years
+// Add years
 function initializeYears() {
     console.log('Initializing years...');
     yearFilter.innerHTML = '<option value="">All Years</option>';
@@ -76,7 +76,7 @@ function initializeYears() {
     console.log('Years initialized successfully');
 }
 
-// Add this function to initialize sort-by dropdown
+// Sort-by dropdown
 function initializeSortBy() {
     console.log('Initializing sort options...');
     sortBy.innerHTML = `
@@ -88,7 +88,7 @@ function initializeSortBy() {
     console.log('Sort options initialized successfully');
 }
 
-// Add these event listeners for filters
+// Filters
 genreFilter.addEventListener('change', updateMovies)
 yearFilter.addEventListener('change', updateMovies)
 sortBy.addEventListener('change', updateMovies)
@@ -112,7 +112,7 @@ function updateMovies() {
     getMovies(url)
 }
 
-// Initialize filters when the document loads
+// Initialize filters
 document.addEventListener('DOMContentLoaded', async () => {
     console.log('DOM Content Loaded');
     try {
@@ -331,7 +331,7 @@ form.addEventListener('input', debounce((e) => {
         return
     }
     
-    if (searchTerm.length < 2) return // Don't search for very short terms
+    if (searchTerm.length < 2) return // Don't search for concise terms
     
     currentSearch = searchTerm
     currentPage = 1
